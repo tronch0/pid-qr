@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Styling</title>
+    <script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+<div id="canvas"></div>
+<script type="text/javascript">
+
+    const qrCode = new QRCodeStyling({
+        width:256,
+        height:256,
+        data:"{\"id\":\"25b822c2-5032-48d8-b425-a6d665c76fd9\",\"typ\":\"application/iden3comm-plain-json\",\"type\":\"https://iden3-communication.io/authorization/1.0/request\",\"thid\":\"25b822c2-5032-48d8-b425-a6d665c76fd9\",\"body\":{\"callbackUrl\":\"https://self-hosted-demo-backend-platform.polygonid.me/api/callback?sessionId=328323\",\"reason\":\"test flow\",\"scope\":[]},\"from\":\"did:polygonid:polygon:mumbai:2qH7XAwYQzCp9VfhpNgeLtK2iCehDDrfMWUCEg5ig5\"}",
+        margin:0,
+        qrOptions:{"typeNumber":"0","mode":"Byte","errorCorrectionLevel":"M"},
+        image: "logo/less-round-logo.png",
+        imageOptions:{
+            hideBackgroundDots:false,
+            crossOrigin: "anonymous",
+            imageSize:0.5
+        },
+        dotsOptions:{"type":"extra-rounded","color":"#574880","gradient":{"type":"linear","rotation":0,"colorStops":[{"offset":0,"color":"#7837dd"},{"offset":1,"color":"#574880"}]}},
+        backgroundOptions:{"color":"#ffffff","gradient":null}
+        
+        // imageOptions: {
+        //     crossOrigin: "anonymous",
+        //     margin: 20
+        // }
+    });
+
+    qrCode.append(document.getElementById("canvas"));
+    // qrCode.download({ name: "qr", extension: "svg" });
+</script>
+</body>
+</html>
